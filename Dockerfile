@@ -1,12 +1,10 @@
-FROM n8nio/n8n
+FROM n8nio/n8n:latest
 
 USER root
 
-# Install missing command tools
-RUN apt-get update && apt-get install -y gosu
+RUN apk update && apk add --no-cache gosu
 
-# N8N default port
 EXPOSE 5678
 
-# Start N8N
 CMD ["n8n"]
+
