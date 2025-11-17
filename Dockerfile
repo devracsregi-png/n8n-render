@@ -1,12 +1,12 @@
-FROM n8nio/n8n:latest
+FROM n8nio/n8n
 
-# Define a pasta de trabalho
-WORKDIR /data
+USER root
 
-# Expõe a porta usada pelo N8N
+# Install missing command tools
+RUN apt-get update && apt-get install -y gosu
+
+# N8N default port
 EXPOSE 5678
 
-# Comando correto para iniciar o n8n no Render
+# Start N8N
 CMD ["n8n"]
-
-
