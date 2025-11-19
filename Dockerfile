@@ -1,4 +1,4 @@
-FROM n8nio/n8n:latest
+FROM n8nio/n8n:1.81.1
 
 # Config padrão
 ENV N8N_PORT=5678
